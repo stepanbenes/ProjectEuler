@@ -14,9 +14,11 @@ let isPrime x =
         x |> float |> sqrt |> int64 |> loop x
 
 let rec nextPrime x =
-    match isPrime (x + 1L) with
-    | true -> x + 1L
-    | false -> nextPrime (x + 1L)
+    let next = x + 1L
+    if isPrime next then
+        next
+    else
+        nextPrime next
 
 let rec largestPrimeFactor x soFar =
     let next = nextPrime soFar

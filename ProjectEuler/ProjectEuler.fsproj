@@ -44,11 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="Common.fs" />
     <None Include="Problem001.fsx" />
     <None Include="Problem002.fsx" />
     <None Include="Problem003.fsx" />
     <None Include="Problem014.fsx" />
     <None Include="Problem15.fsx" />
+    <None Include="Problem092.fsx" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

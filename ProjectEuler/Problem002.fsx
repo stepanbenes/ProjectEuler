@@ -12,5 +12,5 @@ let fib =
 
 let isEven x = x % 2 = 0
 
-fib2 |> Seq.filter isEven |> Seq.takeWhile (fun x -> x <= 4000000) |> Seq.sum
+fib |> Seq.filter isEven |> Seq.takeWhile (fun x -> x <= 4000000) |> Seq.sum
 

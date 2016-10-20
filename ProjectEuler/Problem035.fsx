@@ -7,7 +7,6 @@ How many circular primes are there below one million?
 *)
 
 #load "Common.fs"
-
 open Common
 
 let composeNumberFromDigits (digits:int[]) offset =

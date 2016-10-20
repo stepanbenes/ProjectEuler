@@ -4,13 +4,10 @@
 // 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
-let fib = 
-    let rec loop x y = seq { yield y; yield! loop y (x + y) }
-    loop 1 1
-
-//let fib2 = Seq.unfold (fun (current, next) -> Some(current, (next, current + next))) (0, 1)
+#load "Common.fs"
+open Common
 
 let isEven x = x % 2 = 0
 
-fib |> Seq.filter isEven |> Seq.takeWhile (fun x -> x <= 4000000) |> Seq.sum
+fibonacci |> Seq.filter isEven |> Seq.takeWhile (fun x -> x <= 4000000) |> Seq.sum
 

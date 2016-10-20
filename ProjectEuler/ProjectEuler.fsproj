@@ -52,6 +52,7 @@
     <None Include="Problem015.fsx" />
     <None Include="Problem025.fsx" />
     <None Include="Problem035.fsx" />
+    <None Include="Problem079.fsx" />
     <None Include="Problem092.fsx" />
   </ItemGroup>
   <PropertyGroup>

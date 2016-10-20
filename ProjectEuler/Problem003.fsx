@@ -3,15 +3,7 @@
 // The prime factors of 13195 are 5, 7, 13 and 29.
 // What is the largest prime factor of the number 600851475143 ?
 
-let isPrime x =
-    if x < 2L then
-        false
-    else
-        let rec loop i d = 
-            match d with
-            | 1L -> true
-            | _ -> if i % d = 0L then false else loop i (d - 1L)
-        x |> float |> sqrt |> int64 |> loop x
+
 
 let rec nextPrime x =
     let next = x + 1L

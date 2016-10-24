@@ -34,7 +34,14 @@ module BigInt =
          seq {
              if n > 0I then
                 yield! parseDecimalDigits (n / 10I)
-                yield n % 10I;
+                yield n % 10I |> int;
+         }
+
+    let rec parseDecimalDigitsReverse n =
+         seq {
+             if n > 0I then
+                yield n % 10I |> int;
+                yield! parseDecimalDigitsReverse (n / 10I)
          }
 
     let fibonacci = 

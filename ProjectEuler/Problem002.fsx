@@ -5,7 +5,7 @@
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
 #load "Common.fs"
-open Common
+open Common.Int
 
 let isEven x = x % 2 = 0
 

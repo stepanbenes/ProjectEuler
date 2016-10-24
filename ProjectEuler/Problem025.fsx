@@ -24,7 +24,7 @@ What is the index of the first term in the Fibonacci sequence to contain 1000 di
 *)
 
 #load "Common.fs"
-open Common
+open Common.BigInt
 
 let numberOfDigits n =
     (n |> bigint.Log10 |> int) + 1
@@ -32,4 +32,4 @@ let numberOfDigits n =
 let containsDDigits d n = numberOfDigits n = d
     
 
-let index = (fibonaccI |> Seq.findIndex (containsDDigits 1000)) + 1 // index is 1-based
+let index = (fibonacci |> Seq.findIndex (containsDDigits 1000)) + 1 // index is 1-based

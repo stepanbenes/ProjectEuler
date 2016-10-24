@@ -7,7 +7,6 @@ How many circular primes are there below one million?
 *)
 
 #load "Common.fs"
-open Common
 
 let composeNumberFromDigits (digits:int[]) offset =
     let mutable number = 0
@@ -17,9 +16,9 @@ let composeNumberFromDigits (digits:int[]) offset =
     number
 
 let isCircularPrime x =
-    if isPrime (int64 x) then
-        let digits = x |> parseDecimalDigits |> Seq.toArray
-        seq { 1 .. digits.Length - 1 } |> Seq.map (composeNumberFromDigits digits) |> Seq.forall (int64 >> isPrime)
+    if Common.Int64.isPrime (int64 x) then
+        let digits = x |> Common.Int.parseDecimalDigits |> Seq.toArray
+        seq { 1 .. digits.Length - 1 } |> Seq.map (composeNumberFromDigits digits) |> Seq.forall (int64 >> Common.Int64.isPrime)
     else
         false
 

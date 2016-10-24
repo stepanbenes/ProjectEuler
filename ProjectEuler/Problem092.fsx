@@ -14,7 +14,7 @@ How many starting numbers below ten million will arrive at 89?
 *)
 
 #load "Common.fs"
-open Common
+open Common.Int
 
 let sumSquaresOfDecimalDigits n = n |> parseDecimalDigits |> Seq.map (fun x -> x * x) |> Seq.sum
 

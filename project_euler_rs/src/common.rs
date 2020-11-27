@@ -19,3 +19,12 @@ impl Iterator for Fibonacci {
         Some(self.current)
     }
 }
+
+pub fn is_prime(n: u64) -> bool {
+    for i in (2..n).rev() {
+        if n % i == 0 {
+            return false;
+        }
+    }
+    true
+}

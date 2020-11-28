@@ -20,9 +20,13 @@ impl Iterator for Fibonacci {
     }
 }
 
-pub fn is_prime(n: u64) -> bool {
-    for i in (2..n).rev() {
-        if n % i == 0 {
+pub fn is_prime(x: u64) -> bool {
+    if x < 2 {
+        return false;
+    }
+    let limit = (x as f64).sqrt() as u64 + 1;
+    for i in (2..limit).rev() {
+        if x % i == 0 {
             return false;
         }
     }

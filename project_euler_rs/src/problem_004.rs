@@ -6,15 +6,15 @@ use std::iter;
 // Find the largest palindrome made from the product of two 3-digit numbers.
 
 pub fn solve() -> Option<i32> {
-    for startPos in (100..=999)
+    for start_pos in (100..=999)
         .rev()
         .chain(iter::repeat(100).take(999 - 100))
         .zip(iter::repeat(999).take(1000 - 100).chain((100..=998).rev()))
     {
-        let (mut x, mut y) = startPos;
+        let (mut x, mut y) = start_pos;
         while x <= y {
             let product = x * y;
-            if is_palindrome_2(product) {
+            if is_palindrome(product) {
                 println!("{} {}", x, y);
                 return Some(product);
             }
@@ -26,6 +26,18 @@ pub fn solve() -> Option<i32> {
 }
 
 fn is_palindrome(n: i32) -> bool {
+    let mut n_rev = 0;
+    let mut div = n;
+    while div > 0 {
+        let rem = div % 10;
+        n_rev *= 10;
+        n_rev += rem;
+        div = div / 10;
+    }
+    n == n_rev
+}
+
+fn _is_palindrome_alloc(n: i32) -> bool {
     let mut digits = Vec::new();
     let mut div = n;
     while div > 0 {
@@ -39,16 +51,4 @@ fn is_palindrome(n: i32) -> bool {
         }
     }
     true
-}
-
-fn is_palindrome_2(n: i32) -> bool {
-    let mut n_rev = 0;
-    let mut div = n;
-    while div > 0 {
-        let rem = div % 10;
-        n_rev *= 10;
-        n_rev += rem;
-        div = div / 10;
-    }
-    n == n_rev
 }
